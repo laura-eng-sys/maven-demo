@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: my-artifact
-        path: /actions-runner/_work/maven-demo/maven-demo/MavenWebappProject/target/*.war
+        path: /MavenWebappProject/target/*.war
