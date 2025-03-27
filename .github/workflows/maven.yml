@@ -93,5 +93,5 @@ jobs:
         #push docker image
     - name: push docker image
       run:
-        docker tag laura-eng-sys/maven-demo:latest lauradocker84/github-worflow:myfirst
-        docker push lauradocker84/github-worflow:myfirst
+        #docker tag laura-eng-sys/maven-demo:latest lauradocker84/github-worflow:myfirst
+        docker push laura-eng-sys/maven-demo:latest
