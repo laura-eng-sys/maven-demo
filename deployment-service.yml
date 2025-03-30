@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
-  name: mavendemo-deployment
+  name: maven-demo-deployment
 spec:
   selector:
     matchLabels:
-      app: mavenproject
+      app: maven-demo
   replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
-        app: mavenproject
+        app: maven-demo
     spec:
       containers:
-        - name: mavenproject
+        - name: maven-demo
           image: lauradocker84/github-worflow:myfirst# Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: mavenproject-ssvc
+  name: maven-demo-ssvc
 spec:
   selector:
-    app: mavenproject
+    app: maven-demo
   ports:
     - protocol: "TCP"
-      port: 80
+      port: 8080
       targetPort: 8080 
   type: LoadBalancer # type of the service.
