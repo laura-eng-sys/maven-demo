@@ -1,11 +1,7 @@
-FROM adoptopenjdk/openjdk11 
+FROM tomcat:9.0-alpine 
       
 EXPOSE 8080
 
-ENV APP_HOME /usr/src/app
+ADD /MavenWebappProject/target/*.war /usr/local/tomcat/webapps/
 
-COPY /MavenWebappProject/target/*.war $APP_HOME/app.war
-
-WORKDIR $APP_HOME
-
-CMD ["java", "-jar", "app.war"]
+CMD [“catalina.sh”, “run”]
